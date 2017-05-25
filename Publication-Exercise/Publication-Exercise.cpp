@@ -9,9 +9,11 @@ class Publication
 {
 	std::string title;
 	double price;
+	double sales[3];
+
 
 public:
-	Publication() : title("n/a"), price(0.0)
+	Publication() : title("n/a"), price(0.0), sales{0}
 	{}
 
 	void getData()
@@ -20,10 +22,17 @@ public:
 		std::cin >> title;
 		std::cout << "Please provide $$: ";
 		std::cin >> price;
+		std::cout << "Sales in 1st Month: ";
+		std::cin >> sales[0];
+		std::cout << "Sales in 2nd Month: ";
+		std::cin >> sales[1];
+		std::cout << "Sales in 3rd Month: ";
+		std::cin >> sales[2];
 	}
 	void putData()
 	{
 		std::cout << "Book title: " << title << " Book cost: $" << price << std::endl;
+		std::cout << "sales in month 1,2 and 3: " << sales[0] << ", " << sales[1] << ", " << sales[2] << std::endl;
 	}
 };
 class Book : public Publication
